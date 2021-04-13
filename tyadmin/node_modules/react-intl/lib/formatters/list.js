@@ -1,0 +1,51 @@
+import { filterProps, createError } from '../utils';
+const LIST_FORMAT_OPTIONS = [
+    'localeMatcher',
+    'type',
+    'style',
+];
+const now = Date.now();
+function generateToken(i) {
+    return `${now}_${i}_${now}`;
+}
+export function formatList({ locale, onError }, getListFormat, values, options = {}) {
+    const ListFormat = Intl.ListFormat;
+    if (!ListFormat) {
+        onError(createError(`Intl.ListFormat is not available in this environment.
+Try polyfilling it using "@formatjs/intl-listformat"
+`));
+    }
+    const filteredOptions = filterProps(options, LIST_FORMAT_OPTIONS);
+    try {
+        const richValues = {};
+        const serializedValues = values.map((v, i) => {
+            if (typeof v === 'object') {
+                const id = generateToken(i);
+                richValues[id] = v;
+                return id;
+            }
+            return String(v);
+        });
+        if (!Object.keys(richValues).length) {
+            return getListFormat(locale, filteredOptions).format(serializedValues);
+        }
+        const parts = getListFormat(locale, filteredOptions).formatToParts(serializedValues);
+        return parts.reduce((all, el) => {
+            const val = el.value;
+            if (richValues[val]) {
+                all.push(richValues[val]);
+            }
+            else if (typeof all[all.length - 1] === 'string') {
+                all[all.length - 1] += val;
+            }
+            else {
+                all.push(val);
+            }
+            return all;
+        }, []);
+    }
+    catch (e) {
+        onError(createError('Error formatting list.', e));
+    }
+    return values;
+}

@@ -1,0 +1,60 @@
+[
+    {
+        name: '首页',
+        path: '/xadmin/index',
+        icon: 'dashboard',
+        component: './TyAdminBuiltIn/DashBoard'
+    },
+    {
+        path: '/xadmin/',
+        redirect: '/xadmin/index',
+    },
+    {
+        name: '慧眼识垃圾',
+        icon: 'BarsOutlined',
+        path: '/xadmin/garbage',
+        routes:
+        [
+            {
+                name: '用户概览',
+                path: '/xadmin/garbage/t_user',
+                component: './AutoGenPage/TUserList',
+            },
+            {
+                name: '识别结果',
+                path: '/xadmin/garbage/t_analysis',
+                component: './AutoGenPage/TAnalysisList',
+            },
+            {
+                name: '投放记录',
+                path: '/xadmin/garbage/t_camera',
+                component: './AutoGenPage/TCameraList',
+            },
+            {
+                name: '登入管理',
+                path: '/xadmin/garbage/user_profile',
+                component: './AutoGenPage/UserProfileList',
+            }
+        ]
+    },
+    {
+        name: '系统管理',
+        icon: 'VideoCamera',
+        path: '/xadmin/sys',
+        routes:
+        [
+            {
+                name: '系统日志',
+                icon: 'smile',
+                path: '/xadmin/sys/ty_admin_sys_log',
+                component: './TyAdminBuiltIn/TyAdminSysLogList'
+            },
+            {
+                name: '邮箱验证',
+                icon: 'smile',
+                path: '/xadmin/sys/ty_admin_email_verify_record',
+                component: './TyAdminBuiltIn/TyAdminEmailVerifyRecordList'
+            }
+        ]
+    }
+]

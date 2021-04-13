@@ -1,0 +1,23 @@
+import { Plugin } from '@umijs/runtime';
+import { IRoute } from '..';
+interface IRouterComponentProps {
+    routes: IRoute[];
+    plugin: Plugin;
+    history: any;
+    ssrProps?: object;
+    defaultTitle?: string;
+    dynamicImport?: boolean;
+    isServer?: boolean;
+}
+interface IOpts extends IRouterComponentProps {
+    rootElement?: string | HTMLElement;
+    callback?: () => void;
+}
+/**
+ * preload for SSR in dynamicImport
+ * exec preload Promise function before ReactDOM.hydrate
+ * @param Routes
+ */
+export declare function preloadComponent(readyRoutes: IRoute[], pathname?: string): Promise<IRoute[]>;
+export default function renderClient(opts: IOpts): any;
+export {};

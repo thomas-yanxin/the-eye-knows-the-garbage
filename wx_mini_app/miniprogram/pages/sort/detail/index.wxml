@@ -1,0 +1,3 @@
+<!--index.wxml-->
+<import src="../../../utils/garbage-sort/garbage-sort.wxml"/>
+<template is="wxaSortPicker" data="{{wxaSortPickerData,sort}}"/>

@@ -1,0 +1,7 @@
+{
+  "component": true,
+  "usingComponents": {
+    "i-card": "/dist/card/index"
+  },
+  "navigationBarTitleText": "积分查询"
+}

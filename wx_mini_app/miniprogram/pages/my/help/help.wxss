@@ -1,0 +1,15 @@
+/* pages/my/help/help.wxss */
+.font{
+  font-size: 16px;
+  font-family:"宋体";
+  text-indent:2em
+}
+.collapse-item-title{
+  font-size: large;
+  font-family:"宋体"
+}
+.help_pic{
+  width: 300rpx;
+  height:216rpx;
+  margin:0 auto;
+}

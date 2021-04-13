@@ -1,0 +1,132 @@
+import { MessageFormatElement } from 'intl-messageformat-parser';
+import { parse } from 'intl-messageformat-parser';
+
+export declare interface ArgumentPart {
+    type: PART_TYPE.argument;
+    value: any;
+}
+
+export declare function createDefaultFormatters(cache?: FormatterCache): Formatters;
+
+export declare function formatHTMLMessage(els: MessageFormatElement[], locales: string | string[], formatters: Formatters, formats: Formats, values?: Record<string, PrimitiveType | object | FormatXMLElementFn>, originalMessage?: string): Array<string | object>;
+
+export declare interface Formats {
+    number: Record<string, Intl.NumberFormatOptions>;
+    date: Record<string, Intl.DateTimeFormatOptions>;
+    time: Record<string, Intl.DateTimeFormatOptions>;
+}
+
+export declare interface FormatterCache {
+    number: Record<string, Intl.NumberFormat>;
+    dateTime: Record<string, Intl.DateTimeFormat>;
+    pluralRules: Record<string, Intl.PluralRules>;
+}
+
+export declare interface Formatters {
+    getNumberFormat(...args: ConstructorParameters<typeof Intl.NumberFormat>): Intl.NumberFormat;
+    getDateTimeFormat(...args: ConstructorParameters<typeof Intl.DateTimeFormat>): Intl.DateTimeFormat;
+    getPluralRules(...args: ConstructorParameters<typeof Intl.PluralRules>): Intl.PluralRules;
+}
+
+export declare function formatToParts(els: MessageFormatElement[], locales: string | string[], formatters: Formatters, formats: Formats, values?: Record<string, any>, currentPluralValue?: number, originalMessage?: string): MessageFormatPart[];
+
+export declare function formatToString(els: MessageFormatElement[], locales: string | string[], formatters: Formatters, formats: Formats, values?: Record<string, PrimitiveType>, originalMessage?: string): string;
+
+export declare type FormatXMLElementFn = (...args: any[]) => string | object;
+
+declare class IntlMessageFormat {
+    private readonly ast;
+    private readonly locales;
+    private readonly formatters;
+    private readonly formats;
+    private readonly message;
+    private readonly formatterCache;
+    constructor(message: string | MessageFormatElement[], locales?: string | string[], overrideFormats?: Partial<Formats>, opts?: Options);
+    format: (values?: Record<string, PrimitiveType> | undefined) => string;
+    formatToParts: (values?: Record<string, any> | undefined) => MessageFormatPart[];
+    formatHTMLMessage: (values?: Record<string, string | number | boolean | object | Date | FormatXMLElementFn | null | undefined> | undefined) => (string | object)[];
+    resolvedOptions: () => {
+        locale: string;
+    };
+    getAst: () => MessageFormatElement[];
+    static defaultLocale: string;
+    static __parse: typeof parse | undefined;
+    static formats: {
+        number: {
+            currency: {
+                style: string;
+            };
+            percent: {
+                style: string;
+            };
+        };
+        date: {
+            short: {
+                month: string;
+                day: string;
+                year: string;
+            };
+            medium: {
+                month: string;
+                day: string;
+                year: string;
+            };
+            long: {
+                month: string;
+                day: string;
+                year: string;
+            };
+            full: {
+                weekday: string;
+                month: string;
+                day: string;
+                year: string;
+            };
+        };
+        time: {
+            short: {
+                hour: string;
+                minute: string;
+            };
+            medium: {
+                hour: string;
+                minute: string;
+                second: string;
+            };
+            long: {
+                hour: string;
+                minute: string;
+                second: string;
+                timeZoneName: string;
+            };
+            full: {
+                hour: string;
+                minute: string;
+                second: string;
+                timeZoneName: string;
+            };
+        };
+    };
+}
+export { IntlMessageFormat }
+export default IntlMessageFormat;
+
+export declare interface LiteralPart {
+    type: PART_TYPE.literal;
+    value: string;
+}
+
+export declare type MessageFormatPart = LiteralPart | ArgumentPart;
+
+export declare interface Options {
+    formatters?: Formatters;
+}
+
+export declare const enum PART_TYPE {
+    literal = 0,
+    argument = 1
+}
+
+export declare type PrimitiveType = string | number | boolean | null | undefined | Date;
+
+export { }

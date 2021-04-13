@@ -1,0 +1,13 @@
+<!-- <view class="itemView"> -->
+  <!-- <input class="input" name="userRealNameInput" value="{{userRealName}}" type="text" placeholder="当前用户名" placeholder-class="phstyle" bindinput="userNameInput"/> -->
+  <!-- <i-panel title="圆角输入框">
+    <i-input value="{{userRealName}}" type="text" right title="实名信息" mode="normal" placeholder="请输入" bind:change="userNameInput" />
+  </i-panel> -->
+
+<i-panel title="圆角输入框">
+    <i-input value="{{userRealName}}" type="text" right title="实名信息" placeholder="名字" bind:change="userNameInput"/>
+</i-panel>
+<!-- </view> -->
+<view class="viewName" style="background-color:#fbf9fe">
+  <i-button bind:click="loginBtnClick" type="success" shape="circle">提交</i-button>
+</view>

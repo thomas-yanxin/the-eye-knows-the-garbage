@@ -1,0 +1,22 @@
+<view class="cu-bar bg-darkGray search"  style="width: 750rpx; height: 120rpx; display: flex; box-sizing: border-box">
+  <view class=" search-form  round " bindtap="goSearch">
+    <text class="cuIcon-search text-green"></text>
+    <input type="text" placeholder="输入垃圾名称" value="{{searchText}}" confirm-type="search"
+    focus="{{true}}" bindinput="searchIcon" style="width: 647rpx; height: 92rpx; display: block; box-sizing: border-box"></input>
+  </view>
+</view>
+<view class="filter-view" wx:for="{{datas}}" wx:key  bindtap="onItemClick" data-index="{{item.categroyId}}">
+  <view class="item-view item-o bg-white" bind:tap="text_audio" data-garname="{{item.garbageName}}" data-catename="{{item.categroyName}}" wx:if="{{index%2==0}}">
+    <text>{{item.garbageName}}</text>
+    <text>[{{item.categroyName}}]</text>
+  </view>
+
+   <view class="item-view item-ji bg-grey" bind:tap="text_audio" data-garname="{{item.garbageName}}" data-catename="{{item.categroyName}}" wx:else >
+    <text>{{item.garbageName}}</text>
+    <text> [{{item.categroyName}}]</text>
+  </view>
+</view>
+
+ <view class="item-view item-o bg-white"  wx:if="{{datas&&datas.length===0 && searchText.length>0}}">
+    <text>{{noResult}}</text>
+  </view>

@@ -1,0 +1,37 @@
+/* miniprogram/pages/my/mymy/myname.wxss */
+.user_txt{
+  color:blue;
+}
+.input_style{
+  color:green;
+}
+.itemView{
+  margin-top: 10px;
+  margin-left: 10px;
+  margin-right: 10px;
+  height: 50px;
+  
+  justify-content: flex-start;
+  display: flex;
+  align-items: center;
+
+  font-size: 35rpx;
+}
+.input{
+ width: 240px;
+ height: 50px; 
+ border: 1rpx solid rgb(54, 54, 54);
+ border-radius: 25rpx;
+}
+.phstyle{
+  font-size: 35rpx;
+  padding-left: 30rpx;
+}
+.loginBtn{
+  width: 80%;
+  display: flex;
+  align-items: center;
+  justify-content: center; 
+  border: 1rpx solid rgb(54, 54, 54);
+  border-radius: 10rpx;
+}

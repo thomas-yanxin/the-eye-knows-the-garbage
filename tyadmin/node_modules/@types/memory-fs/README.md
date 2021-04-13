@@ -1,0 +1,16 @@
+# Installation
+> `npm install --save @types/memory-fs`
+
+# Summary
+This package contains type definitions for memory-fs (https://github.com/webpack/memory-fs).
+
+# Details
+Files were exported from https://github.com/DefinitelyTyped/DefinitelyTyped/tree/master/types/memory-fs
+
+Additional Details
+ * Last updated: Wed, 19 Sep 2018 15:37:20 GMT
+ * Dependencies: node
+ * Global values: none
+
+# Credits
+These definitions were written by e-cloud <https://github.com/e-cloud>.

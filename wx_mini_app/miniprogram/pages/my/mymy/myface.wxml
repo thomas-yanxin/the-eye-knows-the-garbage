@@ -1,0 +1,12 @@
+<!--miniprogram/pages/my/mymy/myface.wxml-->
+<view style="width: 100%; height:calc(100vh - 200rpx);">
+<camera style="width: 100%; height:100%;" wx:if="{{isCamera}}" device-position="back"
+ flash="off" binderror="error" ></camera>
+<image style="width: 100%; height:100%;"  wx:else mode="widthFix" src="{{src}}"></image>
+</view>
+
+<view class='photo-view'>
+  <image src='/images/paizhao_button.png' class='takePhoto' bindtap="takePhoto"/>
+</view>
+
+

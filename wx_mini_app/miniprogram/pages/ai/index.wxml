@@ -1,0 +1,69 @@
+
+<view wx:if="{{isHide}}">
+  <view wx:if="{{canIUse}}" >
+        <view class='header'>
+            <image src='/images/wx_login.png'></image>
+        </view>
+        <view class='content'>
+            <view>申请获取以下权限</view>
+            <text>获得你的公开信息(昵称，头像等)</text>
+        </view>
+ 
+        <button class='bottom' type='primary' open-type="getUserInfo" lang="zh_CN" bindgetuserinfo="bindGetUserInfo">
+            授权登录
+        </button>
+    </view>
+    <view wx:else>请升级微信版本</view>
+</view>
+
+<view wx:else>
+  <view class="bg" style="opacity:{{0.2}}">
+    <image class="bg-image" src="/images/main.jpg" style="width: 750rpx; height: 959rpx; display: inline-block; box-sizing: border-box; position: relative; left: 3rpx; top: 108rpx"></image>
+  </view>
+  <swiper class="swiper_container" vertical="true" autoplay="true" circular="true" interval="2000">
+     <block wx:for="{{msgList}}">
+      <navigator url="/pages/index/index?title={{item.url}}" open-type="navigate">
+        <swiper-item>
+          <view class="swiper_item">{{item.title}}</view>
+        </swiper-item>
+      </navigator>
+    </block>
+  </swiper>
+  <view class="cu-bar bg-darkGray search" style="position: relative; left: 0rpx; top: -73rpx; width: 750rpx; height: 104rpx; display: flex; box-sizing: border-box">
+    <view class=" search-form  round " bindtap="goSearch">
+      <text class="cuIcon-search text-green"></text>
+      <input type="text" placeholder="输入垃圾名称" placeholder-class="font" confirm-type="search" bindinput="searchIcon"></input>
+    </view>
+  </view>
+  <view class='ai-view' style="width: auto; height: auto; display: flex; box-sizing: border-box">
+    <image style="position: relative; left: 0rpx; top: -47rpx"  src='/images/paizhao.png' class='ai-paizhao' bindtap='onBindCamera' />
+    <text class='txt' style="width: 122rpx; height: 42rpx; display: block; box-sizing: border-box">拍照识别</text>
+  </view>
+
+  <view class='ai-view'>
+    <image style="position: relative; left: 0rpx; top: -36rpx"  src='/images/speech_icon_128.png' class='ai-paizhao'  bindtouchstart='onTouchStart' bindtouchend='onTouchEnd' />
+    <text class='txt'>语音识别</text>
+  </view>
+
+  <view  wx:if="{{canRecordStart}}"  class="speak-style">
+      <image wx:if="{{j==1}}" class="sound-style" src="../../images/speech_1.png" ></image>
+      <image wx:if="{{j==2}}" class="sound-style" src="../../images/speech_2.png" ></image>
+      <image wx:if="{{j==3}}" class="sound-style" src="../../images/speech_3.png" ></image>
+      <image wx:if="{{j==4}}" class="sound-style" src="../../images/speech_4.png" ></image>
+      <image wx:if="{{j==5}}"class="sound-style" src="../../images/speech_5.png" ></image>
+  </view>
+
+  <view class="box" wx:if="{{SHOW_TOP}}">
+    <view class='arrow'></view>
+    <view class='body' bindtap='showModal'>
+      <text>点击「添加到我的小程序」</text>
+    </view>
+  </view>
+
+  <view class="kefu-box">
+  <button  open-type="contact" class="kefu-body">
+      <image class="img" src="/images/ai-chat.png"></image>
+      <text class="q-tx">联系我们</text>
+  </button>
+  </view>
+</view>

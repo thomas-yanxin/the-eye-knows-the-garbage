@@ -1,0 +1,16 @@
+<view class='top-view'>
+  <text>保护环境，人人有责</text>
+</view>
+<view class="cu-bar bg-darkGray search"bindtap="goSearch">
+  <view class=" search-form  round ">
+    <text class="cuIcon-search text-green"></text>
+    <input type="text" placeholder="输入垃圾名称" placeholder-class="font" confirm-type="search" bindinput="searchIcon"></input>
+  </view>
+</view>
+<view class="grid col-2 padding-sm" style="width: 750rpx; height: 828rpx; display: flex; box-sizing: border-box">
+  <view class="padding-sm " wx:for="{{ColorList}}" bindtap="onClick"  data-index='{{index}}' wx:key>
+    <image class="icon" src='{{item.pic}}' style="position: relative; left: 30rpx; top: 42rpx"></image>
+    <text class="garname" style="position: relative; left: 13rpx; top: 42rpx">{{item.name}}</text>
+  </view>
+</view>
+

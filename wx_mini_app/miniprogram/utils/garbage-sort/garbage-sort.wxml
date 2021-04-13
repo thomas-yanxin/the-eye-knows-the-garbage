@@ -1,0 +1,93 @@
+<wxs module="wxaSortPickerTemTagTap">
+var oldInstance ;
+    var changeTag = function(event, ownerInstance) {
+             //console.log('event:'+JSON.stringify(event)+'-------ownerInstance:'+JSON.stringify(ownerInstance));
+              // var allInstance = ownerInstance.selectAllComponents('.wxaSortPickerTemTag'); // 返回组件的实例
+               var instance = event.instance;
+
+               //console.log('instance:'+JSON.stringify(allInstance));
+               console.log('instance:'+JSON.stringify(instance));
+          /**  allInstance.setStyle({
+                  "font-size": "32rpx",
+                    "color": "#46595F"
+               });
+               */
+               console.log('oldInstance:'+JSON.stringify(oldInstance));
+
+               if(oldInstance){
+                   oldInstance.setStyle({
+                                 "font-size": "32rpx",
+                                   "color": "#46595F"
+                              });
+               }
+               instance.setStyle({
+                   "font-size":"48rpx",
+                   "color": "#00cc77"
+               });
+                oldInstance = instance;
+               instance.callMethod("wxaSortPickerTemTagTap",event);
+            return false;
+        }
+
+       module.exports = {
+         changeTag: changeTag
+       };
+</wxs>
+<template name="wxaSortPicker">
+    <scroll-view class="wxaSortPickerList" scroll-y="true" style="height: {{wxaSortPickerData.view.scrollHeight}}px;" bindscrolltoupper="wxaSortPickerUpper" bindscrolltolower="wxaSortPickerLower" bindscroll="wxaSortPickerScroll" scroll-into-view="{{wxaSortPickerData.wxaSortPickertoView}}">    
+       <view class="container" style="background-color:{{sort.bgcolor}}">
+         <view class="view-hearder">
+            <image class="logo" src="{{sort.logo}}"></image>
+            <view class="hearder-name-view">
+              <text class="one-view">{{sort.name}}:</text>
+              <text class="two-view">{{sort.content}}</text>
+            </view>
+          </view>
+          <view class="title" style="background-color:{{sort.color}}">主要包括</view>
+          <view>{{sort.desc}}</view>
+          <view class="title" style="background-color:{{sort.color}}">投放要求</view>
+          <block wx:for="{{sort.action}}" wx:key>
+            <view class="action-go">
+              <text class="cuIcon-title text-gan"></text>
+              <text>{{item}}</text>
+            </view>
+          </block>
+        </view>
+
+
+        <block wx:for="{{wxaSortPickerData.textData}}" wx:for-item="item" wx:key="">
+            <view id="{{item.letter}}" class="wxaSortPickerTag">{{item.letter}}</view>
+            <view class='wxaSortPickerItem-box'>              
+              <template is="wxaSortPickerItem" data="{{item,array}}"/>
+            </view>
+        </block>
+    </scroll-view>
+    <template is="wxaSortPickerTemTags"/>
+</template>
+
+<template name="wxaSortPickerItem">  
+  <block wx:if='{{dataType == "object"}}'>
+    <block wx:for="{{item.garbageItem}}" wx:for-item="child" wx:key="">
+        <view class="wxaSortPickerItem" data-text="{{child.name}}" data-value="{{child.value}}"  catchtap= "wxaSortPickerItemTap">
+          {{child.name}}       
+        </view>
+    </block>
+  </block>
+  <block wx:else>
+    <block wx:for="{{item.garbageItem}}" wx:for-item="child" wx:key="">
+        <view class="wxaSortPickerItem" data-text="{{child}}"  catchtap= "wxaSortPickerItemTap">
+          {{child}}       
+        </view>
+    </block>
+  </block>
+    
+</template>
+
+<template name="wxaSortPickerTemTags">
+    <scroll-view style="width:20px;height: {{wxaSortPickerData.view.scrollHeight}}px;" class="wxaSortPickerTemTags">
+        <block wx:for="{{['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z', '#']}}" wx:for-item="item" wx:key="">
+            <view bindtap="{{wxaSortPickerTemTagTap.changeTag}}" data-tag="{{item}}" class="wxaSortPickerTemTag">{{item}}</view>
+        </block>
+    </scroll-view>
+</template>
+

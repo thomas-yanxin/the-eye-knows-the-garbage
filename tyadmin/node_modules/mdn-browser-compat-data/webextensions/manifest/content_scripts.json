@@ -1,0 +1,253 @@
+{
+  "webextensions": {
+    "manifest": {
+      "content_scripts": {
+        "__compat": {
+          "mdn_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/manifest.json/content_scripts",
+          "support": {
+            "chrome": {
+              "version_added": true,
+              "notes": "Content scripts are not applied to tabs already open when the extension is loaded."
+            },
+            "edge": {
+              "version_added": "14"
+            },
+            "firefox": {
+              "version_added": "48"
+            },
+            "firefox_android": {
+              "version_added": "48"
+            },
+            "opera": {
+              "version_added": true,
+              "notes": "Content scripts are not applied to tabs already open when the extension is loaded."
+            },
+            "safari": {
+              "version_added": "14",
+              "notes": "Content scripts are not applied to tabs until the user grants permission via the extension's access popover in the toolbar."
+            }
+          }
+        },
+        "all_frames": {
+          "__compat": {
+            "support": {
+              "chrome": {
+                "version_added": true
+              },
+              "edge": {
+                "version_added": "14"
+              },
+              "firefox": {
+                "version_added": "48"
+              },
+              "firefox_android": {
+                "version_added": "48"
+              },
+              "opera": {
+                "version_added": true
+              },
+              "safari": {
+                "version_added": "14"
+              }
+            }
+          }
+        },
+        "css": {
+          "__compat": {
+            "support": {
+              "chrome": {
+                "version_added": true
+              },
+              "edge": {
+                "version_added": "14"
+              },
+              "firefox": {
+                "version_added": "48"
+              },
+              "firefox_android": {
+                "version_added": "48"
+              },
+              "opera": {
+                "version_added": true
+              },
+              "safari": {
+                "version_added": "14"
+              }
+            }
+          }
+        },
+        "exclude_globs": {
+          "__compat": {
+            "support": {
+              "chrome": {
+                "version_added": true
+              },
+              "edge": {
+                "version_added": "14"
+              },
+              "firefox": {
+                "version_added": "48"
+              },
+              "firefox_android": {
+                "version_added": "48"
+              },
+              "opera": {
+                "version_added": true
+              },
+              "safari": {
+                "version_added": false
+              }
+            }
+          }
+        },
+        "exclude_matches": {
+          "__compat": {
+            "support": {
+              "chrome": {
+                "version_added": true
+              },
+              "edge": {
+                "version_added": "14"
+              },
+              "firefox": {
+                "version_added": "48"
+              },
+              "firefox_android": {
+                "version_added": "48"
+              },
+              "opera": {
+                "version_added": true
+              },
+              "safari": {
+                "version_added": "14"
+              }
+            }
+          }
+        },
+        "include_globs": {
+          "__compat": {
+            "support": {
+              "chrome": {
+                "version_added": true
+              },
+              "edge": {
+                "version_added": "14"
+              },
+              "firefox": {
+                "version_added": "48"
+              },
+              "firefox_android": {
+                "version_added": "48"
+              },
+              "opera": {
+                "version_added": true
+              },
+              "safari": {
+                "version_added": false
+              }
+            }
+          }
+        },
+        "js": {
+          "__compat": {
+            "support": {
+              "chrome": {
+                "version_added": true
+              },
+              "edge": {
+                "version_added": "14"
+              },
+              "firefox": {
+                "version_added": "48"
+              },
+              "firefox_android": {
+                "version_added": "48"
+              },
+              "opera": {
+                "version_added": true
+              },
+              "safari": {
+                "version_added": "14"
+              }
+            }
+          }
+        },
+        "match_about_blank": {
+          "__compat": {
+            "support": {
+              "chrome": {
+                "version_added": true
+              },
+              "edge": {
+                "version_added": "14"
+              },
+              "firefox": {
+                "version_added": "52",
+                "notes": "Content scripts won't be injected into empty iframes at 'document_start' even if you specify that value in 'run_at'."
+              },
+              "firefox_android": {
+                "version_added": "52",
+                "notes": "Content scripts won't be injected into empty iframes at 'document_start' even if you specify that value in 'run_at'."
+              },
+              "opera": {
+                "version_added": true
+              },
+              "safari": {
+                "version_added": false
+              }
+            }
+          }
+        },
+        "matches": {
+          "__compat": {
+            "support": {
+              "chrome": {
+                "version_added": true
+              },
+              "edge": {
+                "version_added": "14"
+              },
+              "firefox": {
+                "version_added": "48"
+              },
+              "firefox_android": {
+                "version_added": "48"
+              },
+              "opera": {
+                "version_added": true
+              },
+              "safari": {
+                "version_added": "14"
+              }
+            }
+          }
+        },
+        "run_at": {
+          "__compat": {
+            "support": {
+              "chrome": {
+                "version_added": true
+              },
+              "edge": {
+                "version_added": "14"
+              },
+              "firefox": {
+                "version_added": "48"
+              },
+              "firefox_android": {
+                "version_added": "48"
+              },
+              "opera": {
+                "version_added": true
+              },
+              "safari": {
+                "version_added": "14",
+                "notes": "Content scripts are not applied to tabs until the user grants permission via the extension's access popover in the toolbar. Additional loads after permission is granted will respect <code>run_at</code>."
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

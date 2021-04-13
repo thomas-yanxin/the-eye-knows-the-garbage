@@ -1,0 +1,2 @@
+import { IntlConfig, IntlFormatters, Formatters } from '../types';
+export declare function formatRelativeTime(config: Pick<IntlConfig, 'locale' | 'formats' | 'onError'>, getRelativeTimeFormat: Formatters['getRelativeTimeFormat'], value: Parameters<IntlFormatters['formatRelativeTime']>[0], unit?: Parameters<IntlFormatters['formatRelativeTime']>[1], options?: Parameters<IntlFormatters['formatRelativeTime']>[2]): string;

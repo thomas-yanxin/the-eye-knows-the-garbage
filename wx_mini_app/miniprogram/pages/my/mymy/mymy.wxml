@@ -1,0 +1,45 @@
+<!--miniprogram/pages/my/mymy/mymy.wxml-->
+<view class="tool-tip " wx:if="{{popMsg}}">
+    <text class="{{popType}}">{{popMsg}}</text>
+</view>
+<view class="list">
+    <navigator url="" open-type="navigate" class="item item-avatar item-icon-right  ">
+        <view class="head" style="position: relative; left: 94rpx; top: 0rpx">
+          <open-data type="userAvatarUrl"></open-data>
+        </view>
+        <!-- <view class="p padding-top"></view> -->
+        <text class="icon-accessory iconfont icon-right "></text>
+    </navigator>
+    <navigator url="" open-type="navigate" class="item item-icon-right">
+        <view class="h2">昵称 <open-data class="item-note" type="userNickName" lang="zh_CN"></open-data></view>
+        <text class="icon-accessory iconfont icon-right "></text>
+    </navigator>
+    <navigator url="" open-type="navigate" class="item item-icon-right">
+        <view class="h2">姓名
+          <view class="item-note ">  
+            <text class="positive">{{isOrganizingData?'去完善信息':'已实名录入'}}</text>
+          </view>
+        </view>
+        <text class="icon-accessory iconfont icon-right "></text>
+    </navigator>
+    <navigator url="" open-type="navigate" class="item item-icon-right">
+        <view class="h2">人脸信息 <view class="item-note ">{{usertype!=0?servicesstr:''}}  
+          <text class="positive">{{isOrganizingData?'去完善信息':'已人脸录入'}}</text></view>
+        </view>
+        <text class="icon-accessory iconfont icon-right "></text>
+    </navigator>
+    <navigator url="" open-type="navigate"  class="item item-icon-right {{usertype==1?'item-borderless':''}}">
+        <view class="h2">性别 <text class="item-note">{{usergender==0?'未知':(usergender==1?'男':'女')}}</text></view>
+        <text class="icon-accessory iconfont icon-right "></text>
+    </navigator>
+    <view class="item  ">
+        <view class="h2">所在地区 
+          <view class="item-note">
+            <open-data type="userCountry" lang="zh_CN"></open-data>·
+            <open-data type="userProvince" lang="zh_CN"></open-data>·
+            <open-data type="userCity" lang="zh_CN"></open-data>
+          </view>
+        </view>
+    </view>
+</view>
+

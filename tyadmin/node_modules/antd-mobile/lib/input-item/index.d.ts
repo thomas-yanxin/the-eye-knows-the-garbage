@@ -1,0 +1,58 @@
+import * as PropTypes from 'prop-types';
+import * as React from 'react';
+import CustomInput from './CustomInput';
+import Input from './Input';
+import { InputItemPropsType } from './PropsType';
+import { Omit } from '../_util/types';
+export declare type HTMLInputProps = Omit<React.HTMLProps<HTMLInputElement>, 'onChange' | 'onFocus' | 'onBlur' | 'value' | 'defaultValue' | 'type'>;
+export interface InputItemProps extends InputItemPropsType, HTMLInputProps {
+    prefixCls?: string;
+    prefixListCls?: string;
+    className?: string;
+    autoAdjustHeight?: boolean;
+    onErrorClick?: React.MouseEventHandler<HTMLDivElement>;
+    onExtraClick?: React.MouseEventHandler<HTMLDivElement>;
+}
+declare function noop(): void;
+declare class InputItem extends React.Component<InputItemProps, any> {
+    static defaultProps: {
+        prefixCls: string;
+        prefixListCls: string;
+        type: string;
+        editable: boolean;
+        disabled: boolean;
+        placeholder: string;
+        clear: boolean;
+        onChange: typeof noop;
+        onBlur: typeof noop;
+        onFocus: typeof noop;
+        extra: string;
+        onExtraClick: typeof noop;
+        error: boolean;
+        onErrorClick: typeof noop;
+        onVirtualKeyboardConfirm: typeof noop;
+        labelNumber: number;
+        updatePlaceholder: boolean;
+        moneyKeyboardAlign: string;
+        moneyKeyboardWrapProps: {};
+        moneyKeyboardHeader: null;
+        disabledKeys: null;
+    };
+    static contextTypes: {
+        antLocale: PropTypes.Requireable<object>;
+    };
+    inputRef: Input | CustomInput | null;
+    private debounceTimeout;
+    constructor(props: InputItemProps);
+    componentWillReceiveProps(nextProps: InputItemProps): void;
+    componentWillUnmount(): void;
+    onInputChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
+    handleOnChange: (value: string, isMutated?: boolean, adjustPos?: Function) => void;
+    onInputFocus: (value: string) => void;
+    onInputBlur: (value: string) => void;
+    clearInput: () => void;
+    focus: () => void;
+    calcPos: (prePos: number, preCtrlVal: string, rawVal: string, ctrlVal: string, placeholderChars: string[], maskReg: RegExp) => number;
+    render(): JSX.Element;
+}
+export default InputItem;

@@ -1,0 +1,8 @@
+{
+  "component": true,
+  "usingComponents": {
+    "i-card": "/dist/card/index",
+    "i-load-more": "/dist/load-more/index"
+  },
+  "navigationBarTitleText": "历史记录"
+}

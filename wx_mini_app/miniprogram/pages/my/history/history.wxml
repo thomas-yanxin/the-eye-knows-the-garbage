@@ -1,0 +1,6 @@
+<!--pages/my/history/history.wxml-->
+<i-card wx:for="{{results}}" wx:key="number" title="识别结果" full="true" extra="{{item.machine_answer}}" thumb="https://ss0.bdstatic.com/70cFvHSh_Q1YnxGkpoWK1HF6hhy/it/u=3561988819,3160402551&fm=26&gp=0.jpg">
+    <view slot="content">识别日期</view>
+    <view slot="footer">{{item.data_time}}</view>
+</i-card>
+<i-load-more loading="{{ false }}" />

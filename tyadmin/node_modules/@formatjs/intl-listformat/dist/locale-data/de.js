@@ -1,0 +1,5 @@
+/* @generated */	
+// prettier-ignore
+if (Intl.ListFormat && typeof Intl.ListFormat.__addLocaleData === 'function') {
+  Intl.ListFormat.__addLocaleData({"data":{"de":{"conjunction":{"long":{"start":"{0}, {1}","middle":"{0}, {1}","end":"{0} und {1}","pair":"{0} und {1}"},"short":{"start":"{0}, {1}","middle":"{0}, {1}","end":"{0} und {1}","pair":"{0} und {1}"},"narrow":{"start":"{0}, {1}","middle":"{0}, {1}","end":"{0} und {1}","pair":"{0} und {1}"}},"disjunction":{"long":{"start":"{0}, {1}","middle":"{0}, {1}","end":"{0} oder {1}","pair":"{0} oder {1}"},"short":{"start":"{0}, {1}","middle":"{0}, {1}","end":"{0} oder {1}","pair":"{0} oder {1}"},"narrow":{"start":"{0}, {1}","middle":"{0}, {1}","end":"{0} oder {1}","pair":"{0} oder {1}"}},"unit":{"long":{"start":"{0}, {1}","middle":"{0}, {1}","end":"{0} und {1}","pair":"{0}, {1}"},"short":{"start":"{0}, {1}","middle":"{0}, {1}","end":"{0} und {1}","pair":"{0}, {1}"},"narrow":{"start":"{0}, {1}","middle":"{0}, {1}","end":"{0} und {1}","pair":"{0}, {1}"}}}},"availableLocales":["de-AT","de-BE","de-CH","de-IT","de-LI","de-LU","de"],"aliases":{},"parentLocales":{}})
+}

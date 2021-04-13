@@ -1,0 +1,5 @@
+/* @generated */
+// prettier-ignore
+if (Intl.DisplayNames && typeof Intl.DisplayNames.__addLocaleData === 'function') {
+  Intl.DisplayNames.__addLocaleData({"data":{},"availableLocales":["zh-Hant-MO"],"aliases":{"zh-CN":"zh-Hans-CN","zh-guoyu":"zh","zh-hakka":"hak","zh-HK":"zh-Hant-HK","zh-min-nan":"nan","zh-MO":"zh-Hant-MO","zh-SG":"zh-Hans-SG","zh-TW":"zh-Hant-TW","zh-xiang":"hsn","zh-min":"nan-x-zh-min"},"parentLocales":{"zh-Hant-MO":"zh-Hant-HK"}})
+}

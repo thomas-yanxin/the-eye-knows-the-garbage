@@ -1,0 +1,51 @@
+<!--
+此文件为开发者工具生成，生成时间: 2021/3/23 下午5:09:23
+使用方法：
+在 C:\the_eye_knows_the_trash\wx_mini_app\miniprogram\pages\ai\index.wxml 引入模板
+
+```
+<import src="index.skeleton.wxml"/>
+<template is="skeleton" wx-if="{{loading}}" />
+```
+
+在 C:\the_eye_knows_the_trash\wx_mini_app\miniprogram\pages\ai\index.wxss 中引入样式
+```
+@import "./index.skeleton.wxss";
+```
+
+更多详细信息可以参考文档：https://developers.weixin.qq.com/miniprogram/dev/devtools/skeleton.html
+-->
+<template name="skeleton">
+  <view class="sk-container">
+    <view>
+      <view class="bg" style="opacity:0.2">
+        <image class="bg-image sk-image" style="width: 375px; height: 479px; display: inline-block; box-sizing: border-box; position: relative; left: 1px; top: 54px"></image>
+      </view>
+      <swiper autoplay="false" circular="true" class="swiper_container" interval="2000" vertical="true" current="0">
+        <navigator open-type="navigate"></navigator>
+        <navigator open-type="navigate"></navigator>
+        <navigator open-type="navigate"></navigator>
+      </swiper>
+      <view class="cu-bar bg-darkGray search" style="position: relative; left: 0px; top: -36px; width: 375px; height: 52px; display: flex; box-sizing: border-box">
+        <view class="search-form round">
+          <text class="cuIcon-search text-green sk-pseudo sk-pseudo-circle"></text>
+          <view placeholder="输入垃圾名称" placeholder-class="font" type="text" class="sk-image"></view>
+        </view>
+      </view>
+      <view class="ai-view" style="width: auto; height: auto; display: flex; box-sizing: border-box">
+        <image class="ai-paizhao sk-image" style="position: relative; left: 0px; top: -23px"></image>
+        <text class="txt sk-transparent sk-text-14-2857-259 sk-text" style="width: 61px; height: 21px; display: block; box-sizing: border-box">拍照识别</text>
+      </view>
+      <view class="ai-view">
+        <image class="ai-paizhao sk-image" style="position: relative; left: 0px; top: -18px"></image>
+        <text class="txt sk-transparent sk-text-14-2857-995 sk-text">语音识别</text>
+      </view>
+      <view class="kefu-box">
+        <button class="kefu-body sk-button sk-pseudo sk-pseudo-circle" open-type="contact">
+          <image class="img sk-image"></image>
+          <text class="q-tx sk-transparent sk-text-30-4348-223 sk-text" style="background-position-x: 50%;">联系我们</text>
+        </button>
+      </view>
+    </view>
+  </view>
+</template>

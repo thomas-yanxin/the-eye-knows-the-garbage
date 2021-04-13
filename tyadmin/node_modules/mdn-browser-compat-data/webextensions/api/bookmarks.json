@@ -1,0 +1,606 @@
+{
+  "webextensions": {
+    "api": {
+      "bookmarks": {
+        "BookmarkTreeNode": {
+          "__compat": {
+            "mdn_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/bookmarks/BookmarkTreeNode",
+            "support": {
+              "chrome": {
+                "version_added": true
+              },
+              "edge": {
+                "version_added": "79"
+              },
+              "firefox": {
+                "version_added": "45"
+              },
+              "firefox_android": {
+                "version_added": false
+              },
+              "opera": {
+                "version_added": true
+              },
+              "safari": {
+                "version_added": false
+              }
+            }
+          },
+          "type": {
+            "__compat": {
+              "support": {
+                "chrome": {
+                  "version_added": false
+                },
+                "edge": {
+                  "version_added": false
+                },
+                "firefox": {
+                  "version_added": "57"
+                },
+                "firefox_android": {
+                  "version_added": false
+                },
+                "opera": {
+                  "version_added": false
+                },
+                "safari": {
+                  "version_added": false
+                }
+              }
+            }
+          }
+        },
+        "BookmarkTreeNodeType": {
+          "__compat": {
+            "mdn_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/bookmarks/BookmarkTreeNodeType",
+            "support": {
+              "chrome": {
+                "version_added": false
+              },
+              "edge": {
+                "version_added": false
+              },
+              "firefox": {
+                "version_added": "57"
+              },
+              "firefox_android": {
+                "version_added": false
+              },
+              "opera": {
+                "version_added": false
+              },
+              "safari": {
+                "version_added": false
+              }
+            }
+          }
+        },
+        "BookmarkTreeNodeUnmodifiable": {
+          "__compat": {
+            "mdn_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/bookmarks/BookmarkTreeNodeUnmodifiable",
+            "support": {
+              "chrome": {
+                "version_added": true
+              },
+              "edge": {
+                "version_added": "79"
+              },
+              "firefox": {
+                "version_added": "45"
+              },
+              "firefox_android": {
+                "version_added": false
+              },
+              "opera": {
+                "version_added": true
+              },
+              "safari": {
+                "version_added": false
+              }
+            }
+          }
+        },
+        "CreateDetails": {
+          "__compat": {
+            "mdn_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/bookmarks/CreateDetails",
+            "support": {
+              "chrome": {
+                "version_added": true
+              },
+              "edge": {
+                "version_added": "79"
+              },
+              "firefox": {
+                "version_added": "45"
+              },
+              "firefox_android": {
+                "version_added": false
+              },
+              "opera": {
+                "version_added": true
+              },
+              "safari": {
+                "version_added": false
+              }
+            }
+          },
+          "type": {
+            "__compat": {
+              "support": {
+                "chrome": {
+                  "version_added": false
+                },
+                "edge": {
+                  "version_added": false
+                },
+                "firefox": {
+                  "version_added": "57"
+                },
+                "firefox_android": {
+                  "version_added": false
+                },
+                "opera": {
+                  "version_added": false
+                },
+                "safari": {
+                  "version_added": false
+                }
+              }
+            }
+          }
+        },
+        "create": {
+          "__compat": {
+            "mdn_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/bookmarks/create",
+            "support": {
+              "chrome": {
+                "version_added": true
+              },
+              "edge": {
+                "version_added": "15"
+              },
+              "firefox": {
+                "version_added": "45"
+              },
+              "firefox_android": {
+                "version_added": false
+              },
+              "opera": {
+                "version_added": true
+              },
+              "safari": {
+                "version_added": false
+              }
+            }
+          }
+        },
+        "get": {
+          "__compat": {
+            "mdn_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/bookmarks/get",
+            "support": {
+              "chrome": {
+                "version_added": true
+              },
+              "edge": {
+                "version_added": "79"
+              },
+              "firefox": {
+                "version_added": "45"
+              },
+              "firefox_android": {
+                "version_added": false
+              },
+              "opera": {
+                "version_added": true
+              },
+              "safari": {
+                "version_added": false
+              }
+            }
+          }
+        },
+        "getChildren": {
+          "__compat": {
+            "mdn_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/bookmarks/getChildren",
+            "support": {
+              "chrome": {
+                "version_added": true
+              },
+              "edge": {
+                "version_added": "79"
+              },
+              "firefox": {
+                "version_added": "45"
+              },
+              "firefox_android": {
+                "version_added": false
+              },
+              "opera": {
+                "version_added": true
+              },
+              "safari": {
+                "version_added": false
+              }
+            }
+          }
+        },
+        "getRecent": {
+          "__compat": {
+            "mdn_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/bookmarks/getRecent",
+            "support": {
+              "chrome": {
+                "version_added": true
+              },
+              "edge": {
+                "version_added": "79"
+              },
+              "firefox": {
+                "version_added": "47"
+              },
+              "firefox_android": {
+                "version_added": false
+              },
+              "opera": {
+                "version_added": true
+              },
+              "safari": {
+                "version_added": false
+              }
+            }
+          }
+        },
+        "getSubTree": {
+          "__compat": {
+            "mdn_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/bookmarks/getSubTree",
+            "support": {
+              "chrome": {
+                "version_added": true
+              },
+              "edge": {
+                "version_added": "79"
+              },
+              "firefox": {
+                "version_added": "45"
+              },
+              "firefox_android": {
+                "version_added": false
+              },
+              "opera": {
+                "version_added": true
+              },
+              "safari": {
+                "version_added": false
+              }
+            }
+          }
+        },
+        "getTree": {
+          "__compat": {
+            "mdn_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/bookmarks/getTree",
+            "support": {
+              "chrome": {
+                "version_added": true
+              },
+              "edge": {
+                "version_added": "15"
+              },
+              "firefox": {
+                "version_added": "45"
+              },
+              "firefox_android": {
+                "version_added": false
+              },
+              "opera": {
+                "version_added": true
+              },
+              "safari": {
+                "version_added": false
+              }
+            }
+          }
+        },
+        "move": {
+          "__compat": {
+            "mdn_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/bookmarks/move",
+            "support": {
+              "chrome": {
+                "version_added": true
+              },
+              "edge": {
+                "version_added": "15"
+              },
+              "firefox": {
+                "version_added": "45"
+              },
+              "firefox_android": {
+                "version_added": false
+              },
+              "opera": {
+                "version_added": true
+              },
+              "safari": {
+                "version_added": false
+              }
+            }
+          }
+        },
+        "onChanged": {
+          "__compat": {
+            "mdn_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/bookmarks/onChanged",
+            "support": {
+              "chrome": {
+                "version_added": true
+              },
+              "edge": {
+                "version_added": "79"
+              },
+              "firefox": {
+                "version_added": "52"
+              },
+              "firefox_android": {
+                "version_added": false
+              },
+              "opera": {
+                "version_added": true
+              },
+              "safari": {
+                "version_added": false
+              }
+            }
+          }
+        },
+        "onChildrenReordered": {
+          "__compat": {
+            "mdn_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/bookmarks/onChildrenReordered",
+            "support": {
+              "chrome": {
+                "version_added": true
+              },
+              "edge": {
+                "version_added": "79"
+              },
+              "firefox": {
+                "version_added": false
+              },
+              "firefox_android": {
+                "version_added": false
+              },
+              "opera": {
+                "version_added": true
+              },
+              "safari": {
+                "version_added": false
+              }
+            }
+          }
+        },
+        "onCreated": {
+          "__compat": {
+            "mdn_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/bookmarks/onCreated",
+            "support": {
+              "chrome": {
+                "version_added": true
+              },
+              "edge": {
+                "version_added": "79"
+              },
+              "firefox": {
+                "version_added": "52"
+              },
+              "firefox_android": {
+                "version_added": false
+              },
+              "opera": {
+                "version_added": true
+              },
+              "safari": {
+                "version_added": false
+              }
+            }
+          }
+        },
+        "onImportBegan": {
+          "__compat": {
+            "mdn_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/bookmarks/onImportBegan",
+            "support": {
+              "chrome": {
+                "version_added": true
+              },
+              "edge": {
+                "version_added": "79"
+              },
+              "firefox": {
+                "version_added": false
+              },
+              "firefox_android": {
+                "version_added": false
+              },
+              "opera": {
+                "version_added": true
+              },
+              "safari": {
+                "version_added": false
+              }
+            }
+          }
+        },
+        "onImportEnded": {
+          "__compat": {
+            "mdn_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/bookmarks/onImportEnded",
+            "support": {
+              "chrome": {
+                "version_added": true
+              },
+              "edge": {
+                "version_added": "79"
+              },
+              "firefox": {
+                "version_added": false
+              },
+              "firefox_android": {
+                "version_added": false
+              },
+              "opera": {
+                "version_added": true
+              },
+              "safari": {
+                "version_added": false
+              }
+            }
+          }
+        },
+        "onMoved": {
+          "__compat": {
+            "mdn_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/bookmarks/onMoved",
+            "support": {
+              "chrome": {
+                "version_added": true
+              },
+              "edge": {
+                "version_added": "79"
+              },
+              "firefox": {
+                "version_added": "52"
+              },
+              "firefox_android": {
+                "version_added": false
+              },
+              "opera": {
+                "version_added": true
+              },
+              "safari": {
+                "version_added": false
+              }
+            }
+          }
+        },
+        "onRemoved": {
+          "__compat": {
+            "mdn_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/bookmarks/onRemoved",
+            "support": {
+              "chrome": {
+                "version_added": true
+              },
+              "edge": {
+                "version_added": "79"
+              },
+              "firefox": {
+                "version_added": "52"
+              },
+              "firefox_android": {
+                "version_added": false
+              },
+              "opera": {
+                "version_added": true
+              },
+              "safari": {
+                "version_added": false
+              }
+            }
+          }
+        },
+        "remove": {
+          "__compat": {
+            "mdn_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/bookmarks/remove",
+            "support": {
+              "chrome": {
+                "version_added": true
+              },
+              "edge": {
+                "version_added": "15"
+              },
+              "firefox": {
+                "version_added": "45"
+              },
+              "firefox_android": {
+                "version_added": false
+              },
+              "opera": {
+                "version_added": true
+              },
+              "safari": {
+                "version_added": false
+              }
+            }
+          }
+        },
+        "removeTree": {
+          "__compat": {
+            "mdn_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/bookmarks/removeTree",
+            "support": {
+              "chrome": {
+                "version_added": true
+              },
+              "edge": {
+                "version_added": "15"
+              },
+              "firefox": {
+                "version_added": "47"
+              },
+              "firefox_android": {
+                "version_added": false
+              },
+              "opera": {
+                "version_added": true
+              },
+              "safari": {
+                "version_added": false
+              }
+            }
+          }
+        },
+        "search": {
+          "__compat": {
+            "mdn_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/bookmarks/search",
+            "support": {
+              "chrome": {
+                "version_added": true
+              },
+              "edge": {
+                "version_added": "79"
+              },
+              "firefox": {
+                "version_added": "47"
+              },
+              "firefox_android": {
+                "version_added": false
+              },
+              "opera": {
+                "version_added": true
+              },
+              "safari": {
+                "version_added": false
+              }
+            }
+          }
+        },
+        "update": {
+          "__compat": {
+            "mdn_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/bookmarks/update",
+            "support": {
+              "chrome": {
+                "version_added": true
+              },
+              "edge": {
+                "version_added": "15"
+              },
+              "firefox": {
+                "version_added": "45"
+              },
+              "firefox_android": {
+                "version_added": false
+              },
+              "opera": {
+                "version_added": true
+              },
+              "safari": {
+                "version_added": false
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

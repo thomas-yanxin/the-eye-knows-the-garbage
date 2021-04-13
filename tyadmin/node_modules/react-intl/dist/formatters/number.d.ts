@@ -1,0 +1,4 @@
+import { IntlConfig, Formatters, IntlFormatters } from '../types';
+export declare function getFormatter({ locale, formats, onError, }: Pick<IntlConfig, 'locale' | 'formats' | 'onError'>, getNumberFormat: Formatters['getNumberFormat'], options?: Parameters<IntlFormatters['formatNumber']>[1]): Intl.NumberFormat;
+export declare function formatNumber(config: Pick<IntlConfig, 'locale' | 'formats' | 'onError'>, getNumberFormat: Formatters['getNumberFormat'], value: Parameters<IntlFormatters['formatNumber']>[0], options?: Parameters<IntlFormatters['formatNumber']>[1]): string;
+export declare function formatNumberToParts(config: Pick<IntlConfig, 'locale' | 'formats' | 'onError'>, getNumberFormat: Formatters['getNumberFormat'], value: Parameters<IntlFormatters['formatNumber']>[0], options?: Parameters<IntlFormatters['formatNumber']>[1]): Intl.NumberFormatPart[];

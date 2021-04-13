@@ -1,0 +1,7 @@
+{
+  "usingComponents": {
+    "i-input": "/dist/input/index",
+    "i-button": "/dist/button/index"
+  },
+  "navigationBarTitleText": "姓名录入"
+}

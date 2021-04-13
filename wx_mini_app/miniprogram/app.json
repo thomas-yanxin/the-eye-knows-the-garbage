@@ -1,0 +1,52 @@
+{
+  "pages": [
+    "pages/ai/index",
+    "pages/ai/camera/camera",
+    "pages/ai/search",
+    "pages/sort/sort",
+    "pages/sort/detail/index",
+    "pages/my/index",
+    "pages/my/history/history",
+    "pages/my/score/score",
+    "pages/my/help/help",
+    "pages/my/mymy/mymy",
+    "pages/my/mymy/myface",
+    "pages/my/mymy/myname"
+  ],
+  "window": {
+    "backgroundColor": "#00FF00",
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#00CD66",
+    "navigationBarTitleText": "慧眼识垃圾",
+    "navigationBarTextStyle": "white"
+  },
+  "plugins": {
+    "WechatSI": {
+      "version": "0.3.4",
+      "provider": "wx069ba97219f66d99"
+    }
+  },
+  "tabBar": {
+    "list": [
+      {
+        "pagePath": "pages/ai/index",
+        "text": "搜索",
+        "iconPath": "images/search_defaut.png",
+        "selectedIconPath": "images/search_select.png"
+      },
+      {
+        "pagePath": "pages/sort/sort",
+        "text": "分类",
+        "iconPath": "images/icon_sort_default.png",
+        "selectedIconPath": "images/icon_sort.png"
+      },
+      {
+        "pagePath": "pages/my/index",
+        "text": "用户",
+        "iconPath": "images/my_defaut.png",
+        "selectedIconPath": "images/my_select.png"
+      }
+    ]
+  },
+  "sitemapLocation": "sitemap.json"
+}

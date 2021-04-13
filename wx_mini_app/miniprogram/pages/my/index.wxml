@@ -1,0 +1,50 @@
+
+<view wx:if="{{isLogin}}" bindtap="onClick" class='b1 float color'>
+   <view class="head">
+      <open-data type="userAvatarUrl"></open-data>
+   </view>
+   <view class="account">
+      <view class='name'>
+         <open-data type="userNickName" lang="zh_CN"></open-data>
+      </view>
+      <view class="address">
+         <open-data type="userCountry" lang="zh_CN"></open-data>·
+         <open-data type="userProvince" lang="zh_CN"></open-data>·
+         <open-data type="userCity" lang="zh_CN"></open-data>
+      </view>
+      <image src="{{point>=200?'/images/level6.png':(point>=160?'/images/level5.png':(point>=120?'/images/level4.png':(point>=80?'/images/level3.png':(point>=40?'/images/level2.png':'/images/level1.png'))))}}" class="level_img"></image>
+   </view>
+   <image src="/images/my_next.png" mode="widthFix" class="image0"></image>
+</view>
+
+<view wx:else>
+   <button open-type="getUserInfo" type="primary" bindgetuserinfo="bindGetUserInfo">
+      登录
+   </button>
+</view>
+
+
+<navigator url="/pages/my/history/history" bindtap="historyClick">
+   <view class='b2 float color text'>
+      <image src="/images/my_view-history.png" class="image"></image>
+      <text class="text2">历史记录</text>
+      <image src="/images/my_next.png" class="image2"></image>
+   </view>
+</navigator>
+
+<navigator url="/pages/my/score/score">
+   <view class='b2 float color text'>
+      <image src="/images/my_myscore.png" class="image"></image>
+      <text class="text2">用户积分</text>
+      <image src="/images/my_next.png" class="image2"></image>
+   </view>
+</navigator>
+
+
+<navigator url="/pages/my/help/help">
+   <view class='b2 float color text'>
+      <image src="/images/my_help.png" class="image"></image>
+      <text class="text2">帮助信息</text>
+      <image src="/images/my_next.png" class="image2"></image>
+   </view>
+</navigator>

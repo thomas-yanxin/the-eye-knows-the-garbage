@@ -1,0 +1,16 @@
+# Installation
+> `npm install --save @types/is-glob`
+
+# Summary
+This package contains type definitions for is-glob ( https://github.com/micromatch/is-glob ).
+
+# Details
+Files were exported from https://github.com/DefinitelyTyped/DefinitelyTyped/tree/master/types/is-glob
+
+Additional Details
+ * Last updated: Fri, 29 Mar 2019 01:19:08 GMT
+ * Dependencies: none
+ * Global values: none
+
+# Credits
+These definitions were written by mrmlnc <https://github.com/mrmlnc>.

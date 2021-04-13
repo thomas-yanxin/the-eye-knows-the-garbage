@@ -1,0 +1,20 @@
+/* miniprogram/pages/my/mymy/myface.wxss */
+.photo-view{
+  width: 100%;
+  height: 200rpx;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.takePhoto{
+  width: 100rpx;
+  height: 100rpx;
+  border-radius: 100rpx; 
+  background-color: #fafffd;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}

@@ -1,0 +1,253 @@
+{
+  "webextensions": {
+    "api": {
+      "events": {
+        "Event": {
+          "__compat": {
+            "mdn_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/events/Event",
+            "support": {
+              "chrome": {
+                "version_added": true
+              },
+              "edge": {
+                "version_added": "14",
+                "partial_implementation": true
+              },
+              "firefox": {
+                "version_added": false
+              },
+              "firefox_android": {
+                "version_added": false
+              },
+              "opera": {
+                "version_added": true
+              },
+              "safari": {
+                "version_added": "14"
+              }
+            }
+          },
+          "addListener": {
+            "__compat": {
+              "mdn_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/events/Event/addListener",
+              "support": {
+                "chrome": {
+                  "version_added": true
+                },
+                "edge": {
+                  "version_added": "14"
+                },
+                "firefox": {
+                  "version_added": false
+                },
+                "firefox_android": {
+                  "version_added": false
+                },
+                "opera": {
+                  "version_added": true
+                },
+                "safari": {
+                  "version_added": "14"
+                }
+              }
+            }
+          },
+          "addRules": {
+            "__compat": {
+              "support": {
+                "chrome": {
+                  "version_added": true
+                },
+                "edge": {
+                  "version_added": "79"
+                },
+                "firefox": {
+                  "version_added": false
+                },
+                "firefox_android": {
+                  "version_added": false
+                },
+                "opera": {
+                  "version_added": true
+                },
+                "safari": {
+                  "version_added": false
+                }
+              }
+            }
+          },
+          "getRules": {
+            "__compat": {
+              "support": {
+                "chrome": {
+                  "version_added": true
+                },
+                "edge": {
+                  "version_added": "79"
+                },
+                "firefox": {
+                  "version_added": false
+                },
+                "firefox_android": {
+                  "version_added": false
+                },
+                "opera": {
+                  "version_added": true
+                },
+                "safari": {
+                  "version_added": false
+                }
+              }
+            }
+          },
+          "hasListener": {
+            "__compat": {
+              "support": {
+                "chrome": {
+                  "version_added": true
+                },
+                "edge": {
+                  "version_added": "14"
+                },
+                "firefox": {
+                  "version_added": false
+                },
+                "firefox_android": {
+                  "version_added": false
+                },
+                "opera": {
+                  "version_added": true
+                },
+                "safari": {
+                  "version_added": "14"
+                }
+              }
+            }
+          },
+          "hasListeners": {
+            "__compat": {
+              "support": {
+                "chrome": {
+                  "version_added": true
+                },
+                "edge": {
+                  "version_added": "79"
+                },
+                "firefox": {
+                  "version_added": false
+                },
+                "firefox_android": {
+                  "version_added": false
+                },
+                "opera": {
+                  "version_added": true
+                },
+                "safari": {
+                  "version_added": false
+                }
+              }
+            }
+          },
+          "removeListener": {
+            "__compat": {
+              "support": {
+                "chrome": {
+                  "version_added": true
+                },
+                "edge": {
+                  "version_added": "14"
+                },
+                "firefox": {
+                  "version_added": false
+                },
+                "firefox_android": {
+                  "version_added": false
+                },
+                "opera": {
+                  "version_added": true
+                },
+                "safari": {
+                  "version_added": "14"
+                }
+              }
+            }
+          },
+          "removeRules": {
+            "__compat": {
+              "support": {
+                "chrome": {
+                  "version_added": true
+                },
+                "edge": {
+                  "version_added": "79"
+                },
+                "firefox": {
+                  "version_added": false
+                },
+                "firefox_android": {
+                  "version_added": false
+                },
+                "opera": {
+                  "version_added": true
+                },
+                "safari": {
+                  "version_added": false
+                }
+              }
+            }
+          }
+        },
+        "Rule": {
+          "__compat": {
+            "mdn_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/events/Rule",
+            "support": {
+              "chrome": {
+                "version_added": true
+              },
+              "edge": {
+                "version_added": "79"
+              },
+              "firefox": {
+                "version_added": false
+              },
+              "firefox_android": {
+                "version_added": false
+              },
+              "opera": {
+                "version_added": true
+              },
+              "safari": {
+                "version_added": false
+              }
+            }
+          }
+        },
+        "UrlFilter": {
+          "__compat": {
+            "mdn_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/events/UrlFilter",
+            "support": {
+              "chrome": {
+                "version_added": true
+              },
+              "edge": {
+                "version_added": "79"
+              },
+              "firefox": {
+                "version_added": "50"
+              },
+              "firefox_android": {
+                "version_added": "50"
+              },
+              "opera": {
+                "version_added": true
+              },
+              "safari": {
+                "version_added": false
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

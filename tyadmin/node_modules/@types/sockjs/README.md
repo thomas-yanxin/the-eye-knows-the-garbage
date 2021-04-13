@@ -1,0 +1,16 @@
+# Installation
+> `npm install --save @types/sockjs`
+
+# Summary
+This package contains type definitions for sockjs (https://github.com/sockjs/sockjs-node).
+
+# Details
+Files were exported from https://github.com/DefinitelyTyped/DefinitelyTyped/tree/master/types/sockjs.
+
+### Additional Details
+ * Last updated: Fri, 15 May 2020 13:12:40 GMT
+ * Dependencies: [@types/node](https://npmjs.com/package/@types/node)
+ * Global values: none
+
+# Credits
+These definitions were written by [Phil McCloghry-Laing](https://github.com/pmccloghrylaing).

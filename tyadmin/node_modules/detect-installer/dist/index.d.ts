@@ -1,0 +1,5 @@
+declare const detectInstaller: {
+    (cwd: string): string[];
+    hasPackageCommand: (packageName: string) => boolean;
+};
+export default detectInstaller;

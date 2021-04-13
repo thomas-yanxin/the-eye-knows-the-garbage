@@ -1,0 +1,17 @@
+<svg width="1024" height="1024" xmlns="http://www.w3.org/2000/svg" class="icon">
+
+ <g>
+  <title>background</title>
+  <rect fill="none" id="canvas_background" height="1026" width="1026" y="-1" x="-1"/>
+ </g>
+ <g>
+  <title>Layer 1</title>
+  <path id="svg_1" fill="#2c2c2c" d="m512,648c92.8,0 168,-75.2 168,-168l0,-176c0,-92.8 -75.2,-168 -168,-168s-168,75.2 -168,168l0,176c0,92.8 75.2,168 168,168zm-120,-344c0,-65.6 54.4,-120 120,-120s120,54.4 120,120l0,176c0,65.6 -54.4,120 -120,120s-120,-54.4 -120,-120l0,-176z"/>
+  <path id="svg_2" fill="#2c2c2c" d="m768,408c-12.8,0 -24,11.2 -24,24l0,56c0,128 -104,232 -232,232s-232,-104 -232,-232l0,-56c0,-12.8 -11.2,-24 -24,-24s-24,11.2 -24,24l0,56c0,145.6 113.6,267.2 256,278.4l0,73.6l-64,0c-12.8,0 -24,11.2 -24,24s11.2,24 24,24l176,0c12.8,0 24,-11.2 24,-24s-11.2,-24 -24,-24l-64,0l0,-73.6c142.4,-12.8 256,-132.8 256,-278.4l0,-56c0,-12.8 -11.2,-24 -24,-24z"/>
+  <rect stroke="null" id="svg_3" height="3.849672" width="78.918298" y="493.56364" x="424.419941" fill-opacity="null" stroke-opacity="null" stroke-width="NaN" fill="#00cc77"/>
+  <rect stroke="null" id="svg_4" height="3.849672" width="113.565359" y="439.66822" x="422.495102" fill-opacity="null" stroke-opacity="null" stroke-width="NaN" fill="#00cc77"/>
+  <rect stroke="null" id="svg_6" height="3.849672" width="132.813722" y="383.847964" x="424.419933" fill-opacity="null" stroke-opacity="null" stroke-width="NaN" fill="#00cc77"/>
+  <rect stroke="null" id="svg_7" height="3.849672" width="148.212401" y="328.0277" x="424.419936" fill-opacity="null" stroke-opacity="null" stroke-width="NaN" fill="#00cc77"/>
+  <rect stroke="null" id="svg_8" height="3.849672" width="182.859458" y="270.282609" x="426.344771" fill-opacity="null" stroke-opacity="null" stroke-width="NaN" fill="#00cc77"/>
+ </g>
+</svg>

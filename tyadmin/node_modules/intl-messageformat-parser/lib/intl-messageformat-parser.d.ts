@@ -1,0 +1,249 @@
+import { UnifiedNumberFormatOptions } from '@formatjs/intl-unified-numberformat';
+
+export declare type ArgumentElement = BaseElement<TYPE.argument>;
+
+export declare interface BaseElement<T extends TYPE> {
+    type: T;
+    value: string;
+    location?: Location;
+}
+
+/**
+ * https://github.com/unicode-org/icu/blob/master/docs/userguide/format_parse/numbers/skeletons.md#skeleton-stems-and-options
+ */
+export declare function convertNumberSkeletonToNumberFormatOptions(tokens: NumberSkeletonToken[]): UnifiedNumberFormatOptions;
+
+export declare function createLiteralElement(value: string): LiteralElement;
+
+export declare function createNumberElement(value: string, style?: string | null): NumberElement;
+
+export declare type DateElement = SimpleFormatElement<TYPE.date, DateTimeSkeleton>;
+
+export declare interface DateTimeSkeleton {
+    type: SKELETON_TYPE.dateTime;
+    pattern: string;
+    location?: Location;
+}
+
+export declare type Expectation = ILiteralExpectation | IClassExpectation | IAnyExpectation | IEndExpectation | IOtherExpectation;
+
+export declare interface ExtendedDateTimeFormatOptions extends Intl.DateTimeFormatOptions {
+    hourCycle?: 'h11' | 'h12' | 'h23' | 'h24';
+}
+
+export declare interface IAnyExpectation {
+    type: "any";
+}
+
+export declare interface IClassExpectation {
+    type: "class";
+    parts: IClassParts;
+    inverted: boolean;
+    ignoreCase: boolean;
+}
+
+export declare interface IClassParts extends Array<string | IClassParts> {
+}
+
+export declare interface IEndExpectation {
+    type: "end";
+}
+
+export declare interface IFilePosition {
+    offset: number;
+    line: number;
+    column: number;
+}
+
+export declare interface IFileRange {
+    start: IFilePosition;
+    end: IFilePosition;
+}
+
+export declare interface ILiteralExpectation {
+    type: "literal";
+    text: string;
+    ignoreCase: boolean;
+}
+
+export declare interface IOtherExpectation {
+    type: "other";
+    description: string;
+}
+
+export declare interface IParseOptions {
+    filename?: string;
+    startRule?: string;
+    tracer?: any;
+    [key: string]: any;
+}
+
+export declare function isArgumentElement(el: MessageFormatElement): el is ArgumentElement;
+
+export declare function isDateElement(el: MessageFormatElement): el is DateElement;
+
+export declare function isDateTimeSkeleton(el?: DateElement['style'] | TimeElement['style'] | Skeleton): el is DateTimeSkeleton;
+
+/**
+ * Type Guards
+ */
+export declare function isLiteralElement(el: MessageFormatElement): el is LiteralElement;
+
+export declare function isNumberElement(el: MessageFormatElement): el is NumberElement;
+
+export declare function isNumberSkeleton(el: NumberElement['style'] | Skeleton): el is NumberSkeleton;
+
+export declare function isPluralElement(el: MessageFormatElement): el is PluralElement;
+
+export declare function isPoundElement(el: MessageFormatElement): el is PoundElement;
+
+export declare function isSelectElement(el: MessageFormatElement): el is SelectElement;
+
+export declare function isTimeElement(el: MessageFormatElement): el is TimeElement;
+
+export declare type LiteralElement = BaseElement<TYPE.literal>;
+
+export declare interface Location {
+    start: LocationDetails;
+    end: LocationDetails;
+}
+
+export declare interface LocationDetails {
+    offset: number;
+    line: number;
+    column: number;
+}
+
+export declare type MessageFormatElement = LiteralElement | ArgumentElement | NumberElement | DateElement | TimeElement | SelectElement | PluralElement | PoundElement;
+
+export declare type NumberElement = SimpleFormatElement<TYPE.number, NumberSkeleton>;
+
+export declare interface NumberSkeleton {
+    type: SKELETON_TYPE.number;
+    tokens: NumberSkeletonToken[];
+    location?: Location;
+}
+
+export declare interface NumberSkeletonToken {
+    stem: string;
+    options: string[];
+}
+
+export declare interface Options {
+    /**
+     * Whether to convert `#` in plural rule options
+     * to `{var, number}`
+     * Default is true
+     */
+    normalizeHashtagInPlural?: boolean;
+    /**
+     * Capture location info in AST
+     * Default is false
+     */
+    captureLocation?: boolean;
+}
+
+export declare function parse(input: string, opts?: ParseOptions): MessageFormatElement[];
+
+/**
+ * Parse Date time skeleton into Intl.DateTimeFormatOptions
+ * Ref: https://unicode.org/reports/tr35/tr35-dates.html#Date_Field_Symbol_Table
+ * @public
+ * @param skeleton skeleton string
+ */
+export declare function parseDateTimeSkeleton(skeleton: string): ExtendedDateTimeFormatOptions;
+
+export declare type ParseFunction = (input: string, options?: IParseOptions) => MessageFormatElement[];
+
+export declare type ParseOptions = Options & IParseOptions;
+
+export declare const pegParse: ParseFunction;
+
+export declare interface PluralElement extends BaseElement<TYPE.plural> {
+    options: Record<ValidPluralRule, PluralOrSelectOption>;
+    offset: number;
+    pluralType: Intl.PluralRulesOptions['type'];
+}
+
+export declare interface PluralOrSelectOption {
+    value: MessageFormatElement[];
+    location?: Location;
+}
+
+export declare interface PoundElement {
+    type: TYPE.pound;
+    location?: Location;
+}
+
+export declare interface SelectElement extends BaseElement<TYPE.select> {
+    options: Record<string, PluralOrSelectOption>;
+}
+
+export declare interface SelectOption {
+    id: string;
+    value: MessageFormatElement[];
+    location?: Location;
+}
+
+export declare interface SimpleFormatElement<T extends TYPE, S extends Skeleton> extends BaseElement<T> {
+    style?: string | S | null;
+}
+
+export declare type Skeleton = NumberSkeleton | DateTimeSkeleton;
+
+export declare const enum SKELETON_TYPE {
+    number = 0,
+    dateTime = 1
+}
+
+export declare class SyntaxError extends Error {
+    static buildMessage(expected: Expectation[], found: string | null): string;
+    message: string;
+    expected: Expectation[];
+    found: string | null;
+    location: IFileRange;
+    name: string;
+    constructor(message: string, expected: Expectation[], found: string | null, location: IFileRange);
+}
+
+export declare type TimeElement = SimpleFormatElement<TYPE.time, DateTimeSkeleton>;
+
+export declare enum TYPE {
+    /**
+     * Raw text
+     */
+    literal = 0,
+    /**
+     * Variable w/o any format, e.g `var` in `this is a {var}`
+     */
+    argument = 1,
+    /**
+     * Variable w/ number format
+     */
+    number = 2,
+    /**
+     * Variable w/ date format
+     */
+    date = 3,
+    /**
+     * Variable w/ time format
+     */
+    time = 4,
+    /**
+     * Variable w/ select format
+     */
+    select = 5,
+    /**
+     * Variable w/ plural format
+     */
+    plural = 6,
+    /**
+     * Only possible within plural argument.
+     * This is the `#` symbol that will be substituted with the count.
+     */
+    pound = 7
+}
+
+export declare type ValidPluralRule = 'zero' | 'one' | 'two' | 'few' | 'many' | 'other' | string;
+
+export { }

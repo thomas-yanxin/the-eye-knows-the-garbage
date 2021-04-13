@@ -1,0 +1,8 @@
+/// <reference types="react" />
+/**
+ * 一个更加安全的 stringify，可以解决循环依赖的问题
+ * @param value
+ */
+declare const stringify: (value: any) => string;
+export { stringify };
+export default function useDeepJSONEffect(effect: React.EffectCallback, dependencies?: Object): void;

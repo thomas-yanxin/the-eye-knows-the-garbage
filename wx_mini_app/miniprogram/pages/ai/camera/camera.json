@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "i-modal": "/dist/modal/index"
+  },
+  "navigationBarTitleText": "相机"
+}

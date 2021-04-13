@@ -1,0 +1,62 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+const path_1 = require("path");
+const child_process_1 = require("child_process");
+const fs_1 = require("fs");
+function haveFile(cwd, fileName) {
+    return fs_1.existsSync(path_1.join(cwd, fileName));
+}
+/**
+ * 判断这个包管理器是否存在
+ * @param packageName
+ */
+const hasPackageCommand = (packageName) => {
+    try {
+        child_process_1.execSync(`${packageName} -v`, {
+            stdio: 'inherit',
+        });
+        return true;
+    }
+    catch (error) {
+        return false;
+    }
+};
+const detectInstaller = function (cwd) {
+    var _a, _b;
+    // 没有 package.json 或 node_modules，判断不出。
+    if (!haveFile(cwd, 'package.json') || !haveFile(cwd, 'node_modules')) {
+        return [];
+    }
+    const pkg = JSON.parse(fs_1.readFileSync(path_1.join(cwd, 'package.json'), 'utf-8'));
+    const deps = [...Object.keys(pkg.dependencies || {}), ...Object.keys(pkg.devDependencies || {})];
+    // 没有依赖，判断不出。
+    if (!deps.length) {
+        return [];
+    }
+    // 有 package-lock.json
+    if (haveFile(cwd, 'package-lock.json')) {
+        return ['npm'];
+    }
+    // 有 yarn.lock
+    if (haveFile(cwd, 'yarn.lock') && haveFile(cwd, 'node_modules/.yarn-integrity')) {
+        const isAliRegistry = fs_1.readFileSync(path_1.join(cwd, 'node_modules/.yarn-integrity'), 'utf-8').includes('registry.npm.alibaba-inc.com');
+        if (isAliRegistry) {
+            return ['ayarn', 'yarn'];
+        }
+        return ['tyarn', 'yarn'];
+    }
+    // 依赖是 link 文件
+    const depDir = path_1.join(cwd, 'node_modules', deps[0]);
+    const isDepSymLink = (_b = (_a = fs_1.lstatSync(depDir)) === null || _a === void 0 ? void 0 : _a.isSymbolicLink) === null || _b === void 0 ? void 0 : _b.call(_a);
+    if (isDepSymLink) {
+        if (process.env.BIGFISH_COMPAT) {
+            return ['tnpm'];
+        }
+        return ['cnpm', 'tnpm', 'pnpm'];
+    }
+    // 检测不到。
+    return [];
+};
+exports.default = detectInstaller;
+detectInstaller.hasPackageCommand = hasPackageCommand;
+module.exports = detectInstaller;

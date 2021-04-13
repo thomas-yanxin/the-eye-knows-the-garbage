@@ -1,0 +1,40 @@
+.icon{
+  width: 200rpx;
+  height: 200rpx;
+  margin: 20rpx 40rpx;
+  border-radius: 20rpx;
+}
+.padding-sm{
+  width: 100%;
+}
+.top-view{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin-top: 70rpx;
+  font-size: 16px;
+}
+
+.bg-darkGray {
+	background-color:  #f6f6f6;
+	color:#ffffff;
+}
+.cu-bar .search-form {
+  background-color:  #ffffff;
+}
+.cu-bar{
+  margin-top: 20rpx;
+}
+.garname{
+  line-height: 20px;/*垂直居中关键*/
+  text-align:center;
+  height: 20rpx;
+  font-size: 15px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+.font{
+  font-size: 16px;
+  
+}

@@ -1,0 +1,6 @@
+<!--pages/my/score/score.wxml-->
+<i-card title="用户积分" extra="{{myscore}}" thumb="https://ss0.bdstatic.com/70cFvHSh_Q1YnxGkpoWK1HF6hhy/it/u=3561988819,3160402551&fm=26&gp=0.jpg">
+    <view slot="content">用户积分指南：</view>
+    <view slot="content">根据用户使用智能垃圾桶情况累加积分!</view>
+    <view slot="footer">保护环境，人人有责</view>
+</i-card>
