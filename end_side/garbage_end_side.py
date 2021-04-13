@@ -38,7 +38,7 @@ model_val = AnalysisModel('C:\\the_eye_knows_the_trash\\face_recognition\\face_v
                                   False,
                                   True)
 
-predictor = pdx.deploy.Predictor('C:\the_eye_knows_the_trash\garbage_model')
+predictor = pdx.deploy.Predictor('C:\\the_eye_knows_the_trash\\garbage_model')
 
 
 tmp = None
