@@ -1,3 +1,7 @@
+本项目相关项目均已上传百度网盘，若下载过程中存在困难，可使用百度网盘进行下载。
+链接：https://pan.baidu.com/s/1KcGOU4DLFQuSb3YZeGktqA
+提取码：reqq
+
 # 慧眼识垃圾（the eye konws the garbage）
 
 ### 背景介绍
