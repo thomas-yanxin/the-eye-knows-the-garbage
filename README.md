@@ -133,7 +133,7 @@
 7. 执行python manage.py createsuperuser # 创建一个可以登入后台的用户
 8. 执行python manage.py runserver # 默认运行在8000端口
 9. 打开开发者工具，导入系统文件夹下wx_mini_app文件夹并运行，即可运行小程序端；
-10. 打开浏览器，输入http://127.0.0.1:8000/xadmin/　输入账号：tyadmin，密码：tyadmin，即可进入后台管理端。
+10. 打开浏览器，输入http://127.0.0.1:8000/xadmin/　输入账号、密码，即可进入后台管理端。
 
 
 ### 效果代表图及[B站展示视频](https://www.bilibili.com/video/BV1xV411e7pm/)
