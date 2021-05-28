@@ -127,9 +127,13 @@
 1. 下载本系统源代码文件夹放置在Windows系统C盘目录下；
 2. 安装python依赖库：pip install -r requestment.txt；
 3. 将garbage_model.zip解压到代码文件夹；
-4. 打开Cmd进入本作品文件夹下，执行python manage.py runserver即可运行后端；
-5. 打开开发者工具，导入系统文件夹下wx_mini_app文件夹并运行，即可运行小程序端；
-6. 打开浏览器，输入http://127.0.0.1:8000/xadmin/　输入账号：tyadmin，密码：tyadmin，即可进入后台管理端。
+4. 打开Cmd进入本作品文件夹下.
+5. 执行python manage.py makemigrations;
+6. 执行python manage.py migrate;
+7. 执行python manage.py createsuperuser # 创建一个可以登入后台的用户
+8. 执行python manage.py runserver # 默认运行在8000端口
+9. 打开开发者工具，导入系统文件夹下wx_mini_app文件夹并运行，即可运行小程序端；
+10. 打开浏览器，输入http://127.0.0.1:8000/xadmin/　输入账号：tyadmin，密码：tyadmin，即可进入后台管理端。
 
 
 ### 效果代表图及[B站展示视频](https://www.bilibili.com/video/BV1xV411e7pm/)
