@@ -145,6 +145,13 @@
 ![效果图6](https://images.gitee.com/uploads/images/2021/0412/232002_630b0b8b_7522525.png "6.png")
 ![效果图7](https://images.gitee.com/uploads/images/2021/0412/232021_62e90e72_7522525.png "7.png")
 
+### 合作团队
+
+| 姓名| 职责 |
+| :----: | :---- |
+| [颜鑫](https://githb.com/thomas-yanxin) | PM  、算法  、 web管理端 |
+| [沈晨](https://github.com/Scxw010516) | 小程序前端 |
+| [杜旭东](https://github.com/DXD-agumo) | 后端 |
 
 ### 参考文献
 [1].	上海人大. 《上海市生活垃圾管理条例》表决通过!今年7月1日起实施[J]. 宁夏人大, 2019, 000(004):40-41.  
@@ -166,7 +173,5 @@
 [17].	https://github.com/mtianyan/django-antd-tyadmi  
 
 
-#### 参与贡献者
-[Scxw010516](https://github.com/Scxw010516)
-[DXD-agumo](https://github.com/DXD-agumo)
+
 
