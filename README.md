@@ -8,9 +8,6 @@
 
 
 ### 设计构思与创意
-&emsp;&emsp;“慧眼识垃圾”作品基于当前垃圾分类政策的指引、依据相关的社会调查结果，进行合理有效的方案设定和软件开发，旨在助力垃圾分类政策的落地施行、普及垃圾分类知识、帮助公众培养垃圾分类意识，从而构建“和谐、美丽”的社会环境。  
-
-&emsp;&emsp;本作品提出与时俱进的创新功能：在每只垃圾桶端部署带有摄像装置的硬件系统，用以将个人垃圾分类结果同个人奖惩记录相联系、微信小程序同垃圾桶相联系、局部垃圾分类信息同垃圾分类监管部门相联系，从而构建“个人→垃圾桶→监管”三者相互联系的垃圾分类系统的方案。此方案能够有效提高公众自觉学习垃圾分类知识、自觉进行日常垃圾分类的意识，同时实现“机器监督”代替“人工监督”，极大地降低了垃圾分类监管部门进行相关监管活动的人力成本。  
 
 &emsp;&emsp;本作品以微信小程序为“个人”平台，用户可在微信小程序中录入必要的人脸等个人信息，并且能够以微信小程序为窗口查询自己的垃圾分类详情。为保证微信小程序的丰富性和人性化，用户可在小程序中通过拍照、语音、搜索等查询日常生活中常遇的生活垃圾，积累自己垃圾分类知识。在垃圾桶端，系统在用户授权情况下通过拍摄用户人脸信息匹配用户个人数据库，并记录其垃圾分类信息。此外，垃圾桶在本作品中充当“引导者”角色，用以引导用户将垃圾投掷到正确的垃圾桶中。在管理端，相关部门一方面可在此总览某地区总体的垃圾分类情况，另一方面也可以通过查询接口查询到具体的某个人的垃圾分类详情。相关部门基于此能够更加有效地制定出行之有效、因地制宜的垃圾分类政策和相关政策的高效实施。
 
@@ -23,38 +20,14 @@
 
 ![系统功能架构图](https://images.gitee.com/uploads/images/2021/0412/225615_f17e0b9e_7522525.png "123.png")
 
-&emsp;&emsp;**微信小程序端**：微信小程序端有“搜索、分类、用户”三大菜单，而在初始登陆时用户需完成“授权”、“人脸信息录入”，“姓名录入”等操作，用以创建用户自己的数据连接。在“搜索”菜单内提供了“垃圾拍照”和“语音搜索”两大功能。用户可以在不同场景下选择最适合的功能选项得到物品对应的垃圾分类结果，从而积累自己的垃圾分类知识；在分类菜单，提供了涵盖面非常广泛的垃圾菜单，用户可以在里面搜索到绝大多数自己想要了解的物品分类结果；在用户菜单，用户除了可以看到自己的个人登录信息外，还可以看见自己在垃圾桶端进行垃圾分类的历史记录以及自己所积攒的个人积分。  
-
-&emsp;&emsp;**垃圾桶**：垃圾桶端用以引导用户进行正确的垃圾分类。垃圾桶端部署了两大功能：人脸匹配和垃圾识别。用户通过人脸匹配自己在微信小程序端录入的人脸，从而与属于自己的数据库进行连接，便于存储自己接下来的分类信息。而垃圾识别则是整个作品系统的核心。用户通过垃圾识别功能预测自己将要丢弃的物品分类结果，并将其存入数据库中方便用户及政府查询。考虑到在现实生活中有老年人等特殊人群的使用，故而在垃圾桶端部署了语音播报功能，从而形成视觉听觉互补进行的人性化设计。  
-
-&emsp;&emsp;**管理端**：管理端用于政府部门查询、分析某个垃圾投放点的具体情况。在管理端中，政府部门可以查询在特定的垃圾投放点群众的投放物品、预测结果、个人信息等数据库中的存储信息，方便对于某些未按要求进行垃圾分类的群众进行查处，也便于对积分较高的群众进行奖励。除此以外，政府部分通过分析某个垃圾桶放点的垃圾分类情况，可以更加合理高效地制定更具有针对性的垃圾分类政策。
-
-### 开源代码或调用实现
-深度学习框架：PaddlePaddle;  
-
-		https://www.paddlepaddle.org.cn/   
-
-人脸检测：运用其中提到的“利用PaddleHub实现Siamese Network”思想训练人脸匹配模型 
-                
-              https://aistudio.baidu.com/aistudio/projectdetail/560890  
-
-
-语音合成：百度智能云在线语音合成  
-
-		https://cloud.baidu.com/product/speech/tts_online  
-
-
 
 ### 关键技术
 #### 基于[PaddleX](https://github.com/paddlepaddle/PaddleX)的垃圾分类
 &emsp;&emsp;Paddle X作为飞桨(PaddlePaddle)全流程开发套件，以低代码形式支持开发者快速实现项目落地。Paddle X集成飞桨智能视觉领域图像分类、目标检测、语义分割、实例分割任务能力，将深度学习开发全流程从数据准备、模型训练与多端部署端到端打通，并提供统一任务API接口，帮助开发者实践落地。  
 
-#####	训练调优
-&emsp;&emsp;本作品数据集[14]共分为四个大类，分别为可回收物、厨余垃圾、其他垃圾以及有害垃圾，每大类分类中又有细分，共分四十小类，基本覆盖日常生活中的绝大多数垃圾种类。数据集数量庞大，质量较高，能够基本满足深度学习的训练要求。  
-
 &emsp;&emsp;为了提高模型的泛化性和鲁棒性，本作品在训练过程中分别加入了 RandomCrop、RandomVerticalFlip、RandomHorizontalFlip 、RandomDistort和Normalize等多种数据增强方式，分别对数据集中的图像进行随机剪裁、以一定的概率对图像进行随机垂直和水平翻转以及以一定的概率对图像进行随机像素内容变换和对图像进行标准化等操作。  
 
-&emsp;&emsp;从模型在验证集中的结果来看，其精度可达90%以上，具有较好的识别能力，故模型具备作品的可行性和有效性。  
+&emsp;&emsp;从模型在验证集中的结果来看，其精度可达94%以上，具有较好的识别能力，故模型具备作品的可行性和有效性。  
 
 ##### 基于[PaddleSlim](https://github.com/paddlepaddle/PaddleSlim)敏感度分析的剪枝策略
 &emsp;&emsp;PaddleSlim是一个模型压缩工具库，包括模型裁剪、定点量化、只是蒸馏、超参数搜索和模型结构搜索等一系列模型压缩策略。  
@@ -77,8 +50,7 @@
 &emsp;&emsp;2、转换为二分类问题，即分辨两张人脸照片组成的图片对中是否来自同一个人，继而输出置信度。  
 &emsp;&emsp;由于第一种方式存在诸多缺点，例如：当模型训练完成后，无法随时加入新的人，较为死板，动态性较差；数据库中需要采集较为宽泛的人脸储备，实现难度大。故本作品采取第二种方式来实现人脸验证。  
 &emsp;&emsp;将人脸验证转换为二分类问题，使用孪生网络(Siamese Network)实现。首先，通过同一个CNN网络将人脸图片进行相同的编码，嵌入一个高维的向量空间。然后，使用softmax loss作为损失函数直接对两个样本嵌入向量的拼接做二分类训练，使模型能够直接输出两个相同样本之间的相似度，当相似度达到一定的阈值后即判断是否为同一个人。  
- 
-&emsp;&emsp;受NLP句对分类，即将两个句子进行拼接直接进行分类的方式的启发，在计算机视觉中采取同样的方式，将上述方法转换为一个更为简单的图像分类方法实现，直接兼容Paddle Hub中的各种预训练模型，即将两张对比的人脸图片进行拼接直接二分类。以此方式，能够将Siamese Network转换成一个普遍的图像分类任务，能够利用PaddleHub实现。经实验验证，本方法在测试集上的准确率能够达到96.4%，基本符合本作品的实际应用要求。  
+
 
 ##### 基于[Tyadmin](https://github.com/mtianyan/django-antd-tyadmin)的管理端开发
 &emsp;&emsp;Tyadmin是Django基于Models的管理后台前后端生成工具，其主要由Django Restful Framework和Ant Design Pro V4驱动。  
@@ -86,16 +58,6 @@
 &emsp;&emsp;Tyadmin在Model设计完备的基础上，能够自动生成前后端管理后台，实现页面接口全自动对接，包括登录验证、修改密码、Dashboard数据统计等多项功能。其支持包括账号、邮箱登录的多种登录方式；内嵌自动dashboard，能够自动注册现有的model count数据；实现全自动的列表展示、增删改查、筛选搜索和导出Excel，方便管理端管理和查询相关数据。  
 
 &emsp;&emsp;基于此，本作品使用Tyadmin实现供政府端监管、查询的管理后台，通过连通数据库，将数据库中的数据清晰明了地展现给政府监管部门，方便有关部门统计相关地区的垃圾分类数据、监管某地区的垃圾分类具体情况，继而指定切实合理的垃圾分类政策。
-
-
-### 作品特色
-&emsp;&emsp;本作品充分调研了当前有关垃圾分类的政策及市场环境，分析了当前垃圾分类落地实现的一些阻力，基于此，本作品提出“个人——垃圾桶——政府”三者互联的垃圾分类方案。此方案的创新点在于其将原本的政府人员监督替代为机器监督、个人行为与政府监管相联系，从根本上解决了“政府监管困难”的问题，降低政府监管成本。除此以外，本作品也充分考虑垃圾分类知识的普及：在小程序端设置了“拍照识别”、“语音识别”、“分类搜索”等模块，方便用户在日常生活中借助小程序积累垃圾分类知识。从整体来看，本作品集成了个人行为与政府监管双落地，实现了知识普及与分类监管互相统一的总体目标。  
-
-&emsp;&emsp;此外，本作品采取人脸识别检测作为用户凭证，以此连通个人专属数据库，进而个人可以在自己的小程序端查询自己的个人积分与历史记录，政府既可以在管理后台概览某地区的垃圾分类情况，也可以对某些不遵循垃圾分类的用户进行查处，有助于垃圾分类的总体实现。  
-
-&emsp;&emsp;本作品充分考虑日常生活中的使用人群及使用场景，对于一些听觉或视觉能力下降的老年人，本系统使用视觉呈现与语音播报二者相结合的方式输出系统的识别结果，辅助老人们在使用本系统时不会因为个人原因而受到阻碍。此外，本作品的界面及功能设计充分考虑当代人的使用习惯和使用逻辑，界面简洁美观、功能齐全高效，并且对积分总量设置了相应的“段位”，符合当下年轻人的使用体验，并且能够达到“鼓励群众积极参与垃圾分类”的目的。  
-
-&emsp;&emsp;由于本作品的人脸识别检测与个人专属数据库挂钩、垃圾分类结果与个人积分挂钩，整体系统与政府监管相联系，故在本作品中，确保人脸识别检测及垃圾分类模型的精度，是本作品诸多待需解决问题中的“重中之重”！而本作品采用2.3.1和2.3.2中所提及的关键技术，攻克了这两个难题，垃圾分类模型精度达到99.46%，人脸识别检测模型达到96.4%，基本满足本作品在实际应用场景下的精度需求。  
 
 ### 安装教程
 
@@ -128,24 +90,10 @@
 | [沈晨](https://github.com/Scxw010516) | 小程序前端 |
 | [杜旭东](https://github.com/DXD-agumo) | 后端 |
 
-### 参考文献
-[1].	上海人大. 《上海市生活垃圾管理条例》表决通过!今年7月1日起实施[J]. 宁夏人大, 2019, 000(004):40-41.  
-[2].	None. 生活垃圾分类违法如何查处?城管执法细则出台[J]. 橡塑智造与节能环保, 2019(7):1-3.  
-[3].	He K , Zhang X , Ren S , et al. Deep Residual Learning for Image Recognition[C]// IEEE Conference on Computer Vision & Pattern Recognition. IEEE Computer Society, 2016.  
-[4].	Andrew Howard, Mark Sandler, Grace Chu,etc.Searching for MobileNetV3[R].Seoul, Korea (South):IEEE/CVF International Conference on Computer Vision,2019.  
-[5].	M. Tan, B. Chen, R. Pang, V. Vasudevan, and Q. V. Le. Mnasnet: Platform-aware neural architecture search for mobile. CoRR, abs/1807.11626, 2018.   
-[6].	T. Yang, A. G. Howard, B. Chen, X. Zhang, A. Go, M. Sandler, V. Sze, and H. Adam. Netadapt: Platform-aware neural network adaptation for mobile applications. In ECCV, 2018.    
-[7].	Yalniz I Z, Jégou H, Chen K, et al. Billion-scale semi-supervised learning for image classification[J]. arXiv preprint arXiv:1905.00546, 2019.  
-[8].	Cubuk E D, Zoph B, Mane D, et al. Autoaugment: Learning augmentation strategies from data[C]//Proceedings of the IEEE conference on computer vision and pattern recognition. 2019: 113-123.  
-[9].	Hao Li, Asim Kadav, Igor Durdanovic,etc.Pruning Filters for Efficient ConvNets[R]:ICLR,2017.  
-[10].	Xu Tang, Daniel K. Du, Zeqiang He,etc.PyramidBox: A Context-assisted Single Shot Face Detector[R]:ECCV,2018.  
-[11].	https://www.paddlepaddle.org.cn/paddle/paddleX  
-[12].	https://github.com/PaddlePaddle/PaddleClas  
-[13].	https://aistudio.baidu.com/aistudio/datasetdetail/43904  
-[14].	https://github.com/PaddlePaddle/PaddleSlim  
-[15].	https://github.com/PaddlePaddle/PaddleHub  
-[16].	https://aistudio.baidu.com/aistudio/projectdetail/560890  
-[17].	https://github.com/mtianyan/django-antd-tyadmi  
+### 相关荣誉
+1. 2021年上海市机器人及人工智能二等奖；
+2. 2022年上海市计算机应用能力设计大赛二等奖；
+3. ……
 
 
 
